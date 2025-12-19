@@ -19,9 +19,6 @@ export default function Home() {
             <a href="#features" className="hover:text-blue-600 transition-colors">יתרונות</a>
             <a href="#process" className="hover:text-blue-600 transition-colors">איך זה עובד</a>
             <a href="#contact" className="hover:text-blue-600 transition-colors">צור קשר</a>
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-bold">
-                {CONTACT_CONFIG.phone}
-            </span>
         </div>
       </header>
 
