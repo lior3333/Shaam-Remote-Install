@@ -26,7 +26,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-20 bg-white" id="features">
+    <section className="py-20 bg-white" id="features" aria-label="קטע יתרונות וסל השירותים">
       <div className="container mx-auto px-4">
         
         {/* Intro Section */}
@@ -42,7 +42,11 @@ export default function Features() {
         </div>
 
         {/* What I Offer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          role="list"
+          aria-label="סל השירותים הנדרשים"
+        >
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -51,8 +55,9 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-md transition-shadow"
+              role="listitem"
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">{feature.title}</h3>
@@ -63,27 +68,27 @@ export default function Features() {
 
         {/* Target Audience */}
         <div className="mt-20 bg-blue-600 rounded-3xl p-8 md:p-12 text-white overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" aria-hidden="true"></div>
           
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">למי השירות מתאים?</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3">
-                  <div className="bg-blue-500 p-1 rounded-full">
+              <ul className="space-y-4" role="list" aria-label="קבוצות יעד">
+                <li className="flex items-center gap-3" role="listitem">
+                  <div className="bg-blue-500 p-1 rounded-full" aria-hidden="true">
                     <CheckCircle2 className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-lg text-blue-50">רואי חשבון ויועצי מס הזקוקים לגישה מיידית</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <div className="bg-blue-500 p-1 rounded-full">
+                <li className="flex items-center gap-3" role="listitem">
+                  <div className="bg-blue-500 p-1 rounded-full" aria-hidden="true">
                     <CheckCircle2 className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-lg text-blue-50">משרדים שנתקלו בבעיות חיבור או איטיות</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <div className="bg-blue-500 p-1 rounded-full">
+                <li className="flex items-center gap-3" role="listitem">
+                  <div className="bg-blue-500 p-1 rounded-full" aria-hidden="true">
                     <CheckCircle2 className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-lg text-blue-50">מי שרוצה ראש שקט ופתרון טכני מלא</span>
@@ -93,10 +98,10 @@ export default function Features() {
             <div className="flex-1 w-full max-w-sm">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                     <div className="flex items-center gap-4 mb-4">
-                        <UserCheck className="w-10 h-10 text-blue-200" />
+                        <UserCheck className="w-10 h-10 text-blue-200" aria-hidden="true" />
                         <div>
-                            <div className="font-bold text-lg">שירות אישי</div>
-                            <div className="text-blue-200 text-sm">זמין בוואטסאפ לכל שאלה</div>
+                            <h4 className="font-bold text-lg">שירות אישי</h4>
+                            <p className="text-blue-200 text-sm">זמין בוואטסאפ לכל שאלה</p>
                         </div>
                     </div>
                      <p className="text-blue-100 text-sm">

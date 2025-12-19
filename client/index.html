@@ -6,6 +6,7 @@
 
     <title>התקנת שע״מ מרחוק לרואי חשבון | שירות מהיר ומאובטח</title>
     <meta name="description" content="שירות התקנת שע״מ (שירות עיבודים ממוכנים) מרחוק לרואי חשבון. התקנה תוך 30 דקות, חיבור מאובטח, תשלום רק לאחר הצלחה. פתרון IT מקצועי ומהיר." />
+    <meta name="theme-color" content="#1e293b" />
     
     <meta property="og:title" content="התקנת שע״מ מרחוק לרואי חשבון | שירות מהיר ומאובטח" />
     <meta property="og:description" content="שירות התקנת שע״מ (שירות עיבודים ממוכנים) מרחוק לרואי חשבון. התקנה תוך 30 דקות, חיבור מאובטח, תשלום רק לאחר הצלחה. פתרון IT מקצועי ומהיר." />
@@ -21,8 +22,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <style>
+      /* Accessibility: Focus indicators for keyboard navigation */
+      *:focus-visible {
+        outline: 3px solid #2563eb;
+        outline-offset: 2px;
+      }
+      
+      /* Skip to main content link */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #2563eb;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        z-index: 100;
+        border-radius: 0 0 4px 0;
+      }
+      
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Reduce motion for users who prefer it */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* High contrast mode support */
+      @media (prefers-contrast: more) {
+        body {
+          font-weight: 500;
+        }
+      }
+    </style>
   </head>
   <body>
+    <a href="#main-content" className="skip-link">דלג לתוכן הראשי</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
