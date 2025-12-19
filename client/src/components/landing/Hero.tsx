@@ -10,15 +10,12 @@ export default function Hero() {
   };
 
   return (
-    <section 
-      className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900"
-      aria-label="קטע כניסה - התקנת שע״מ מרחוק"
-    >
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900">
       {/* Background with overlay */}
-      <div className="absolute inset-0 z-0" aria-hidden="true">
+      <div className="absolute inset-0 z-0">
         <img 
           src={heroBg} 
-          alt="רקע משרד מודרני עם מחשב" 
+          alt="Office Background" 
           className="w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
@@ -32,10 +29,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full text-blue-700 font-medium text-sm md:text-base shadow-sm"
-            role="status"
-            aria-live="polite"
           >
-            <ShieldCheck className="w-4 h-4" aria-hidden="true" />
+            <ShieldCheck className="w-4 h-4" />
             <span>התקנה מאובטחת ומקצועית מרחוק</span>
           </motion.div>
 
@@ -66,24 +61,20 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4"
-            role="group"
-            aria-label="כפתורי פעולה"
           >
             <Button 
               size="lg" 
               className="text-lg px-8 py-6 h-auto bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all"
               onClick={scrollToContact}
-              aria-label="התקנה עכשיו - נתב לעמוד צור קשר"
             >
               אני רוצה להתקין עכשיו
-              <ArrowLeft className="mr-2 h-5 w-5" aria-hidden="true" />
+              <ArrowLeft className="mr-2 h-5 w-5" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               className="text-lg px-8 py-6 h-auto border-slate-300 hover:bg-slate-50 text-slate-700"
               onClick={() => document.getElementById("process")?.scrollIntoView({ behavior: "smooth" })}
-              aria-label="איך זה עובד - נתב לתיאור התהליך"
             >
               איך זה עובד?
             </Button>
@@ -95,19 +86,17 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="pt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-slate-500 text-sm md:text-base font-medium"
-            role="list"
-            aria-label="יתרונות המפתח"
           >
-            <div className="flex items-center justify-center gap-2" role="listitem">
-              <Clock className="w-5 h-5 text-blue-500" aria-hidden="true" />
+            <div className="flex items-center justify-center gap-2">
+              <Clock className="w-5 h-5 text-blue-500" />
               <span>התקנה מהירה תוך 30 דק׳</span>
             </div>
-            <div className="flex items-center justify-center gap-2" role="listitem">
-              <ShieldCheck className="w-5 h-5 text-blue-500" aria-hidden="true" />
+            <div className="flex items-center justify-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-blue-500" />
               <span>חיבור מאובטח ומוצפן</span>
             </div>
-            <div className="flex items-center justify-center gap-2" role="listitem">
-              <CreditCard className="w-5 h-5 text-blue-500" aria-hidden="true" />
+            <div className="flex items-center justify-center gap-2">
+              <CreditCard className="w-5 h-5 text-blue-500" />
               <span>תשלום לאחר התקנה בלבד</span>
             </div>
           </motion.div>

@@ -31,11 +31,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section 
-      className="py-20 bg-slate-50" 
-      id="process"
-      aria-label="קטע תהליך העבודה - 5 שלבים"
-    >
+    <section className="py-20 bg-slate-50" id="process">
       <div className="container mx-auto px-4">
         
         <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -59,36 +55,30 @@ export default function Process() {
 
               <div className="space-y-8 relative">
                 {/* Connecting Line */}
-                <div className="absolute top-4 bottom-4 right-[1.6rem] w-0.5 bg-blue-100 hidden md:block" aria-hidden="true"></div>
+                <div className="absolute top-4 bottom-4 right-[1.6rem] w-0.5 bg-blue-100 hidden md:block"></div>
 
-                <ol className="space-y-8 relative" role="list" aria-label="שלבי התקנה">
-                  {steps.map((step, index) => (
-                    <motion.li 
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1, duration: 0.5 }}
-                      className="flex gap-6 relative"
-                      role="listitem"
-                    >
-                      <div 
-                        className="hidden md:flex flex-shrink-0 w-14 h-14 bg-white border-2 border-blue-100 rounded-full items-center justify-center z-10 font-bold text-blue-600 shadow-sm"
-                        aria-label={`שלב ${step.number}`}
-                      >
-                        {step.number}
+                {steps.map((step, index) => (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    className="flex gap-6 relative"
+                  >
+                    <div className="hidden md:flex flex-shrink-0 w-14 h-14 bg-white border-2 border-blue-100 rounded-full items-center justify-center z-10 font-bold text-blue-600 shadow-sm">
+                      {step.number}
+                    </div>
+                    <div className="flex-1 bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="flex items-center gap-3 mb-2 md:hidden">
+                        <span className="font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded text-sm">{step.number}</span>
+                        <h3 className="font-bold text-lg text-slate-900">{step.title}</h3>
                       </div>
-                      <div className="flex-1 bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="flex items-center gap-3 mb-2 md:hidden">
-                          <span className="font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded text-sm">{step.number}</span>
-                          <h3 className="font-bold text-lg text-slate-900">{step.title}</h3>
-                        </div>
-                        <h3 className="font-bold text-lg text-slate-900 hidden md:block mb-2">{step.title}</h3>
-                        <p className="text-slate-600 text-sm md:text-base">{step.description}</p>
-                      </div>
-                    </motion.li>
-                  ))}
-                </ol>
+                      <h3 className="font-bold text-lg text-slate-900 hidden md:block mb-2">{step.title}</h3>
+                      <p className="text-slate-600 text-sm md:text-base">{step.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -103,7 +93,7 @@ export default function Process() {
             >
               <img 
                 src={processImg} 
-                alt="ויזואליזציה של תהליך חיבור מאובטח" 
+                alt="תהליך עבודה מאובטח" 
                 className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
               />
               
@@ -112,7 +102,6 @@ export default function Process() {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-slate-100 max-w-[200px] hidden md:block"
-                aria-hidden="true"
               >
                 <div className="text-sm font-bold text-slate-900 mb-1">חיבור מאובטח</div>
                 <div className="text-xs text-slate-500">הצפנת נתונים מקצה לקצה בזמן החיבור</div>
@@ -123,7 +112,6 @@ export default function Process() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute -bottom-6 -left-6 bg-blue-600 p-4 rounded-xl shadow-lg max-w-[200px] hidden md:block"
-                aria-hidden="true"
               >
                 <div className="text-sm font-bold text-white mb-1">100% הצלחה</div>
                 <div className="text-xs text-blue-100">תשלום רק לאחר שהכל עובד תקין</div>

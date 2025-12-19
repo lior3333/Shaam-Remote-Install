@@ -30,31 +30,22 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="py-20 bg-white" aria-label="שאלות נפוצות">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-3xl font-bold text-center mb-10 text-slate-900">שאלות נפוצות</h2>
         
-        <div role="region" aria-label="טבלת שאלות ותשובות">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`} 
-                className="border border-slate-200 rounded-lg px-4 data-[state=open]:bg-slate-50 data-[state=open]:border-blue-200 transition-colors"
-              >
-                <AccordionTrigger 
-                  className="text-lg font-medium text-slate-800 hover:text-blue-600 hover:no-underline py-4 text-right"
-                  aria-expanded="false"
-                >
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-slate-600 text-base leading-relaxed pb-4 text-right">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        <Accordion type="single" collapsible className="w-full space-y-4">
+          {faqs.map((faq, index) => (
+            <AccordionItem key={index} value={`item-${index}`} className="border border-slate-200 rounded-lg px-4 data-[state=open]:bg-slate-50 data-[state=open]:border-blue-200 transition-colors">
+              <AccordionTrigger className="text-lg font-medium text-slate-800 hover:text-blue-600 hover:no-underline py-4 text-right">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed pb-4 text-right">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
 
       </div>
     </section>
