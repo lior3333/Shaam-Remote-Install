@@ -37,11 +37,11 @@ export default function Contact() {
           </Button>
 
           <div className="mt-16 pt-12 border-t border-slate-800">
-               <div className="flex items-center justify-center gap-4 mb-6">
+               <div className="flex items-center justify-center gap-4 mb-6 flex-row-reverse">
                   <div className="bg-slate-800 p-2 rounded-full">
                       <CheckCircle className="text-green-400 w-6 h-6" />
                   </div>
-                  <div className="text-left">
+                  <div className="text-right">
                       <h4 className="font-bold text-lg">{CONTACT_CONFIG.name}</h4>
                       <p className="text-slate-400">{CONTACT_CONFIG.role}</p>
                   </div>
